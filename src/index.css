@@ -682,7 +682,6 @@ section {
   align-self: flex-end;
   text-align: center;
   font-size: clamp(0.75rem, 2.5vw, 1.1rem);
-  padding-right: 1vw;
 }
 
 .project {
@@ -757,11 +756,19 @@ section {
   }
   .worksContainer {
     height: max-content;
+    min-height: max-content;
   }
+  
   .title,
   .project {
     width: 85vw;
   }
+
+  
+.titleCount {
+  padding-right: 6vw;
+}
+
 
   .projectShowCase {
     display: none;

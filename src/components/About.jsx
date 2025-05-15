@@ -1,6 +1,6 @@
 import React from "react";
 import Cross from "../assets/cross.svg";
-import Hello from "../assets/helloMemoji.png";
+import Hello from "../../public/helloMemoji.png";
 import Button from "./Button";
 
 function About({ setVisibility, visibility }) {
