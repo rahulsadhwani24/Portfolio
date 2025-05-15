@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import CallMemoji from "../../public/callMemoji.png"
 
 const Contact = ({visibility}) => {
   const [inputValues, setInputValues] = useState({
@@ -61,7 +62,7 @@ const Contact = ({visibility}) => {
             <Button text="Send message" isFilled="true" />
           </span>
         </div>
-        <img src="../src/assets/callMemoji.png" className="ContactMemoji" />
+        <img src={CallMemoji} className="ContactMemoji" />
       </div>
     </section>
   );

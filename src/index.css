@@ -756,7 +756,7 @@ section {
     width: auto;
   }
   .worksContainer {
-    min-height: max-content;
+    height: max-content;
   }
   .title,
   .project {

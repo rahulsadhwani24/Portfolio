@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import MenuGif from "../../public/Menu.gif"
+import SearchGif from "../../public/search-context.gif"
 
 const Experiments = ({visibility}) => {
   const [experimentsArray, setExperiments] = useState([
     {
       name: "Menu Open/Close Animation",
-      image: "../src/assets/Menu.gif",
+      image: MenuGif,
     },
     {
       name: "Search Input Animation",
-      image: "../src/assets/search-context.gif",
+      image: SearchGif,
     },
     {
       name: "Menu Open/Close Animation",
-      image: "../src/assets/Menu.gif",
+      image: MenuGif,
     },
     {
       name: "Search Input Animation",
-      image: "../src/assets/search-context.gif",
+      image: SearchGif,
     },
   ]);
 
