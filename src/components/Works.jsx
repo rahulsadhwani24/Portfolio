@@ -8,25 +8,25 @@ function Works({ visibility }) {
       name: "Theme Park",
       type: "Javascript",
       link: "https://rahulsadhwani24.github.io/Themepark/",
-      logo: "../src/assets/Menu.gif",
+      logo: "../assets/Menu.gif",
     },
     {
       name: "Marketing Arcc",
       type: "Javascript",
       link: "https://rahulsadhwani24.github.io/MarketingArc/",
-      logo: "../src/assets/search-context.gif",
+      logo: "../assets/search-context.gif",
     },
     {
       name: "Max Medical",
       type: "Javascript",
       link: "https://rahulsadhwani24.github.io/MaxMedical/",
-      logo: "../src/assets/callMemoji.png",
+      logo: "../assets/callMemoji.png",
     },
     {
       name: "Two Good Co.",
       type: "Javascript",
       link: "https://rahulsadhwani24.github.io/TwoGoodCo/",
-      logo: "../src/assets/helloMemoji.png",
+      logo: "../assets/helloMemoji.png",
     },
   ]);
 

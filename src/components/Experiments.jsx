@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "./Button";
 import MenuGif from "../../public/Menu.gif"
 import SearchGif from "../../public/search-context.gif"
 

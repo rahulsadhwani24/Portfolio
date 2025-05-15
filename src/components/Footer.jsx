@@ -1,11 +1,29 @@
 import React, { useEffect, useState } from "react";
+import Arrow from "../assets/arrow.svg";
 
 function Footer() {
-  const [dateTime, setDateTime] = useState(new Date());
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+
+  const yearFormatter = new Intl.DateTimeFormat("en-US", {
+    year: "numeric"
+  })
+
+  const [formattedDate, setFormattedDate] = useState(
+    formatter.format(new Date())
+  );
+  const [formattedYear, setFormattedYear] = useState(
+    yearFormatter.format(new Date())
+  );
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setDateTime(new Date());
+      setFormattedDate(formatter.format(new Date()));
+      setFormattedYear(yearFormatter.format(new Date()));
     }, 1000);
 
     return () => clearInterval(intervalId);
@@ -14,25 +32,25 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footerSideLeft">
-        <span>© 2025</span>
-        <span>{dateTime.toLocaleTimeString()} IST</span>
+        <span>© {formattedYear}</span>
+        <span>{formattedDate} IST</span>
       </div>
       <div className="footerSideRight">
         <span className="socialLink">
           LinkedIn
-          <img src="../src/assets/arrow.svg" />
+          <img src={Arrow} />
         </span>
         <span className="socialLink">
           Instagram
-          <img src="../src/assets/arrow.svg" />
+          <img src={Arrow} />
         </span>
         <span className="socialLink">
           Mail
-          <img src="../src/assets/arrow.svg" />
+          <img src={Arrow} />
         </span>
         <span className="socialLink">
           Git
-          <img src="../src/assets/arrow.svg" />
+          <img src={Arrow} />
         </span>
       </div>
       <span className="dividerOnMobiles"></span>

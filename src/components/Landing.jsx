@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
-import About from "./About";
 
 function Landing({ visibility, setVisibility }) {
   const [rotate, setRotate] = useState(0);
