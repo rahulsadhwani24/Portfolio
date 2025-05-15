@@ -735,6 +735,7 @@ section {
 @media only screen and (max-width: 650px) {
   .sectionWorks {
     height: max-content;
+    width: auto;
   }
   .worksContainer{
     min-height: max-content;
