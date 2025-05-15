@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Button from "./Button";
 import Menu from "./Menu";
 
-function Header({visibility}) {
+function Header({visibility, setVisibility}) {
   const [menuState, setMenuState] = useState(false);
 
   return (
     <>
-      <Menu menuState={menuState}/>
+      <Menu menuState={menuState} visibility={visibility} setVisibility={setVisibility}/>
       <div className={`header ${visibility && 'noInteraction'}`}>
         <div className="logoContainer">
           <svg

@@ -45,7 +45,7 @@ section {
 }
 
 @media only screen and (max-width: 650px) {
-  section{
+  section {
     margin-bottom: 10vw;
   }
 }
@@ -104,7 +104,7 @@ section {
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-mode);
-  position: relative;
+  position: sticky;
   top: 0;
   padding-block: 2rem;
   z-index: 101;
@@ -128,6 +128,7 @@ section {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .menuIconHide {
@@ -229,6 +230,13 @@ section {
   transform: translateY(-100%);
 }
 
+.menuMenuContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: default;
+}
+
 .menuLinkContainer {
   display: flex;
   flex-direction: column;
@@ -258,6 +266,13 @@ section {
 .menuLink:hover .splittedMenuLink {
   font-variation-settings: "wdth" 100, "wght" 800;
   transition: 400ms;
+}
+
+.menuFooter{
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  width: 90vw;
 }
 
 /* ------------------------------- About Me ------------------------------ */
@@ -633,16 +648,17 @@ section {
 /* ------------------------------- Works ------------------------------ */
 
 .sectionWorks {
-  position: relative;
-  height: 80vh;
-  width: 96.5vw;
+  width: 95.6vw;
   overflow: hidden;
 }
 
 .worksContainer {
   display: flex;
   min-height: 65vh;
-  justify-content: space-between;
+  position: relative;
+  height: 80vh;
+  width: 96vw;
+  overflow: hidden;
 }
 
 .title,
@@ -666,11 +682,13 @@ section {
   align-self: flex-end;
   text-align: center;
   font-size: clamp(0.75rem, 2.5vw, 1.1rem);
+  padding-right: 1vw;
 }
 
 .project {
   padding-block: 1.5em;
   padding-right: 1em;
+  cursor: pointer;
 }
 
 .projectHeading {
@@ -737,7 +755,7 @@ section {
     height: max-content;
     width: auto;
   }
-  .worksContainer{
+  .worksContainer {
     min-height: max-content;
   }
   .title,
@@ -768,12 +786,15 @@ section {
 
 .experimentsContainer {
   display: flex;
-  flex-wrap: wrap;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .experimentCard {
   background-color: var(--color-font);
   color: var(--color-mode);
+  position: relative;
+  overflow: hidden;
   width: max-content;
   height: max-content;
   padding: 2em;
@@ -781,6 +802,27 @@ section {
   user-select: auto;
   box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.15);
   backface-visibility: hidden;
+  flex-grow: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.experimentCard::after{
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3498db;
+  z-index: -2;
+  transform: translateX(-100%);
+  transition: all 0ms ease-in;
+}
+
+.experimentCard:hover::after{
+  transform: translateX(0%);
+  transition: all 200ms ease-in;
 }
 
 .experimentShowCaseContainer {
@@ -788,7 +830,7 @@ section {
 }
 
 .experimentShowCase {
-  width: clamp(15rem, 24vw, 24rem);
+  max-width: 100%;
 }
 
 .cardContent {
@@ -808,22 +850,22 @@ section {
   transform: translateX(-3.5%);
   margin-bottom: 0.4em;
   text-transform: uppercase;
-  font-size: clamp(0.4rem, 2.5vw, 0.9rem);
+  font-size: clamp(0.2rem, 1vw, 0.7rem);
 }
 
 .cardTitleName {
-  font-size: clamp(0.9rem, 1.7vw, 1.4rem);
+  font-size: clamp(0.3rem, 1.4vw, 1rem);
 }
 
 .line {
   width: 1px;
-  height: 4vw;
+  height: 3vw;
   max-height: 2rem;
   border: 1px solid black;
 }
 
 .experimentCount {
-  font-size: 0.9rem;
+  font-size: clamp(0.2rem, 1vw, 0.7rem);
   transform: rotate(90deg);
 }
 
@@ -832,7 +874,6 @@ section {
   align-items: center;
   justify-content: flex-end;
   margin-top: 4rem;
-  padding-right: 2rem;
 }
 
 .buttonArrow svg {
@@ -847,16 +888,23 @@ section {
 }
 
 @media only screen and (max-width: 650px) {
-  .buttonArrow svg{
-    width: 6.5vw;
-  transform: translateX(-40%) translateY(10%);
+  .experimentsContainer {
+    flex-wrap: wrap;
+  }
+
+  .cardTitle,
+  .experimentCount {
+    font-size: clamp(0.6rem, 1.4vw, 0.9rem);
+  }
+  .cardTitleName {
+    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
   }
 }
 
 /* ------------------------------- Contact ------------------------------ */
 
 .sectionContact {
-  width: 60vw;
+  width: 65vw;
   margin: auto;
   margin-top: 4vw;
 }
@@ -966,7 +1014,7 @@ section {
   margin-top: 4vw;
 }
 
-.dividerOnMobiles{
+.dividerOnMobiles {
   display: none;
 }
 
@@ -974,7 +1022,7 @@ section {
 .footerSideRight {
   display: flex;
   gap: 2em;
-  font-size: clamp(.9rem, 1.5vw, 1.4rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.4rem);
 }
 
 .socialLink {
@@ -1010,8 +1058,8 @@ section {
     display: none;
   }
 
-  .footerSideRight::after{
-    content: '';
+  .footerSideRight::after {
+    content: "";
     position: absolute;
     top: 200%;
     left: 0;

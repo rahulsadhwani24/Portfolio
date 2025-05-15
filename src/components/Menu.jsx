@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Footer from "./Footer";
 
-const SplitArray = ({ array }) => {
+const SplitArray = ({ array, visibility, setVisibility }) => {
   return (
     <span>
       {array.map((letter, index) => {
@@ -25,6 +26,7 @@ function Menu({ menuState }) {
 
   return (
     <div className={`menu ${menuState ? "showMenu" : "hideMenu"}`}>
+      <div className="menuMenuContainer">
       <div className="menuLinkContainer">
         {navLinks.map((link, index) => {
           return (
@@ -34,6 +36,8 @@ function Menu({ menuState }) {
             </span>
           );
         })}
+      </div>
+      <span className="menuFooter"><Footer /></span>
       </div>
     </div>
   );
