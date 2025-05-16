@@ -42,7 +42,6 @@ section {
 a {
   color: var(--color-font);
   text-decoration: none;
-  padding-right: 2em;
 }
 
 a.active {
@@ -261,6 +260,7 @@ a.active {
   width: fit-content;
   height: fit-content;
   white-space: nowrap;
+  padding-right: 2em;
 }
 
 .menuLinkOrder {
@@ -1048,7 +1048,7 @@ a.active {
 .footerSideRight {
   display: flex;
   gap: 2em;
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.5vw, 1.1rem);
 }
 
 .socialLink {
@@ -1093,3 +1093,4 @@ a.active {
     border: 1px solid var(--color-font);
   }
 }
+
