@@ -37,7 +37,7 @@ function Header({visibility, setVisibility}) {
           </svg>
         </div>
         
-        <Link to={'/Portfolio/contact/'}><Button text={"Let's Connect"} isFilled={false} /></Link>
+        <Link to={'/Portfolio/contact/'} onClick={() => {setMenuState(!menuState)}}><Button text={"Let's Connect"} isFilled={false} /></Link>
 
         <div
           className="menuContainer"
