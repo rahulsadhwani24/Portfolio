@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { ReactLenis, useLenis } from "lenis/react";
 import Home from "./Home";
 import Header from "./Header";
@@ -22,7 +22,7 @@ function Router() {
       <About setVisibility={setAboutVisibility} visibility={aboutVisibility} />
       <ReactLenis root>
         <Routes>
-          <Route path="/Portfolio/Home" element={<Home  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
+        <Route path="/Portfolio/Home/" element={<Navigate to="/Portfolio/" replace />} />
           <Route path="/Portfolio/" element={<Home  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
           <Route path="/Portfolio/work/" element={<PageWorks  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
           <Route path="/Portfolio/works/" element={<PageWorks  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
