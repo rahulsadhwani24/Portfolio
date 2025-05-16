@@ -35,7 +35,7 @@ section {
 
 @media only screen and (max-width: 650px) {
   section {
-    margin-bottom: 10vw;
+    margin-bottom: 12vw;
   }
 }
 
@@ -925,7 +925,7 @@ a.active{
 .sectionContact {
   width: 65vw;
   margin: auto;
-  margin-top: 4em;
+  margin-top: 4vw;
 }
 
 .contactTitle {
@@ -1001,6 +1001,8 @@ a.active{
 @media only screen and (max-width: 700px) {
   .sectionContact {
     width: 75vw;
+    margin-left: 0;
+    margin-top: 4em;
   }
   .formElements,
   .contactContainer,
