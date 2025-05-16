@@ -925,7 +925,8 @@ a.active{
 .sectionContact {
   width: 65vw;
   margin: auto;
-  margin-top: 3em;
+  margin-top: 4vw;
+  margin-bottom: 3em;
 }
 
 .contactTitle {
