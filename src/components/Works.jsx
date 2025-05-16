@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Works({ visibility }) {
   const [projectShowCase, setProjectShowCase] = useState(false);
@@ -41,6 +42,7 @@ function Works({ visibility }) {
 
           {projects.map((project, index) => {
             return (
+              <Link to={project.link} target="_blank">
               <div
                 key={index}
                 className="project"
@@ -81,6 +83,7 @@ function Works({ visibility }) {
                   <img src={project.logo} alt={project.name} />
                 </div>
               </div>
+              </Link>
             );
           })}
         </div>

@@ -2,6 +2,8 @@ import React from "react";
 import Cross from "../assets/cross.svg";
 import Hello from "../../public/helloMemoji.png";
 import Button from "./Button";
+import { Link } from "react-router-dom";
+import Resume from "../assets/RAHUL SADHWANI RESUME.pdf";
 
 function About({ setVisibility, visibility }) {
   return (
@@ -30,13 +32,29 @@ function About({ setVisibility, visibility }) {
             <span className="quote">
               "The best way to predict the future is to create it."
             </span>
-            <br /><br /> Whether it's a new project, a freelance inquiry, or just a
+            <br />
+            <br /> Whether it's a new project, a freelance inquiry, or just a
             casual meet-up, I'm always excited to connect and collaborate. Let's
             create something amazing together!
           </p>
           <div className="buttons">
-            <Button text="Resume" isFilled="true" />
-            <Button text="Let's Connect" />
+            <Link
+              to={Resume}
+              target="_blank"
+              onClick={() => {
+                setVisibility(!visibility);
+              }}
+            >
+              <Button text="Resume" isFilled="true" />
+            </Link>
+            <Link
+              to={"/Portfolio/contact"}
+              onClick={() => {
+                setVisibility(!visibility);
+              }}
+            >
+              <Button text="Let's Connect" />
+            </Link>
           </div>
         </div>
       </div>
