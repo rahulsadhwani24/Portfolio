@@ -39,13 +39,13 @@ section {
   }
 }
 
-a{
+a {
   color: var(--color-font);
   text-decoration: none;
   padding-right: 2em;
 }
 
-a.active{
+a.active {
   color: var(--color-primary);
 }
 
@@ -278,6 +278,7 @@ a.active{
 .menuLink:hover .splittedMenuLink {
   font-variation-settings: "wdth" 100, "wght" 800;
   transition: 400ms;
+  color: var(--color-primary);
 }
 
 .menuFooter {
@@ -957,7 +958,7 @@ a.active{
 }
 
 .formLabel {
-  font-size: clamp(0.8rem, 3vw, 1.4rem);
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
 }
 
 .formInput {
@@ -968,7 +969,7 @@ a.active{
   width: 30vw;
   max-width: 32rem;
   min-width: 25rem;
-  font-size: clamp(0.8rem, 3vw, 1.4rem);
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
   color: var(--color-font);
   padding-left: 0.4em;
   padding-bottom: 0.7em;
@@ -976,7 +977,11 @@ a.active{
 
 .formButton {
   display: flex;
-  margin-top: 3vw;
+  margin-top: 2vw;
+}
+
+.toastBody {
+  user-select: none;
 }
 
 .ContactMemoji {
@@ -1043,7 +1048,7 @@ a.active{
 .footerSideRight {
   display: flex;
   gap: 2em;
-  font-size: clamp(0.9rem, 1.5vw, 1.4rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .socialLink {
@@ -1055,7 +1060,7 @@ a.active{
 }
 
 .socialLink img {
-  width: clamp(0.5rem, 1vw, 0.7rem);
+  width: clamp(0.5rem, 1vw, 0.6rem);
   transition: transform 200ms ease-out;
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import Menu from "./Menu";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header({visibility, setVisibility}) {
   const [menuState, setMenuState] = useState(false);
@@ -37,7 +37,7 @@ function Header({visibility, setVisibility}) {
           </svg>
         </div>
         
-        <Button text={"Let's Connect"} isFilled={false} />
+        <Link to={'/Portfolio/contact/'}><Button text={"Let's Connect"} isFilled={false} /></Link>
 
         <div
           className="menuContainer"

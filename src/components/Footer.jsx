@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Arrow from "../assets/arrow.svg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const formatter = new Intl.DateTimeFormat("en-US", {
@@ -10,8 +11,8 @@ function Footer() {
   });
 
   const yearFormatter = new Intl.DateTimeFormat("en-US", {
-    year: "numeric"
-  })
+    year: "numeric",
+  });
 
   const [formattedDate, setFormattedDate] = useState(
     formatter.format(new Date())
@@ -36,22 +37,34 @@ function Footer() {
         <span>{formattedDate} IST</span>
       </div>
       <div className="footerSideRight">
-        <span className="socialLink">
-          LinkedIn
-          <img src={Arrow} />
-        </span>
-        <span className="socialLink">
-          Instagram
-          <img src={Arrow} />
-        </span>
-        <span className="socialLink">
-          Mail
-          <img src={Arrow} />
-        </span>
-        <span className="socialLink">
-          Git
-          <img src={Arrow} />
-        </span>
+        <Link
+          to="https://www.linkedin.com/in/rahul-sadhwani-587199204"
+          target="_blank"
+        >
+          <span className="socialLink">
+            LinkedIn
+            <img src={Arrow} />
+          </span>
+        </Link>
+        <Link to="https://github.com/rahulsadhwani24?tab=repositories" target="_blank">
+          <span className="socialLink">
+            Git
+            <img src={Arrow} />
+          </span>
+        </Link>
+        <Link to="https://www.instagram.com/rahulsadhwani24/" target="_blank">
+          <span className="socialLink">
+            Instagram
+            <img src={Arrow} />
+          </span>
+        </Link>
+          <Link to="https://wa.me/8149126137" target="_blank">
+          <span className="socialLink">
+            Whatsapp
+            <img src={Arrow} />
+          </span>
+          </Link>
+        
       </div>
       <span className="dividerOnMobiles"></span>
     </div>

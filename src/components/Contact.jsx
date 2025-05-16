@@ -1,13 +1,88 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import Button from "./Button";
-import CallMemoji from "../../public/callMemoji.png"
+import CallMemoji from "../../public/callMemoji.png";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
-const Contact = ({visibility}) => {
+const Contact = ({ visibility }) => {
   const [inputValues, setInputValues] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [toastMessage, setToastMessage] = useState("New Message");
+  const form = useRef();
+
+  function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  const sendMail = () => {
+    if(inputValues.name === ""){
+      document.querySelector('.nameMessage').style.display = "inline";
+      return;
+    }
+    else{
+      document.querySelector('.nameMessage').style.display = "none";
+    }
+    if(inputValues.email === ""){
+      document.querySelector('.emailMessage').style.display = "inline";
+      return;
+    }
+    else if(validateEmail(inputValues.email) === false){
+      document.querySelector('.emailMessage').style.display = "inline";
+      return;
+    }
+    else{
+      document.querySelector('.emailMessage').style.display = "none";
+    }
+    if(inputValues.message === ""){
+      document.querySelector('.messageMessage').style.display = "inline";
+      return;
+    }
+    else{
+      document.querySelector('.messageMessage').style.display = "none";
+    }
+    emailjs
+      .sendForm("service_fsrtd1s", "template_s8aikji", form.current, {
+        publicKey: "FOYA6BqczvhHEsEX3",
+      })
+      .then(
+        () => {
+          toast.success("Message Sent", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+          document.querySelectorAll('.formInput').forEach(input => {})
+          setInputValues({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          toast.error("Message Failed", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+        }
+      );
+  };
 
   return (
     <section className={`sectionContact ${visibility && "noInteraction"}`}>
@@ -16,7 +91,7 @@ const Contact = ({visibility}) => {
         New project/Freelance inquery or a meet-up
       </h3>
       <div className="contactContainer">
-        <div className="formElements">
+        <form ref={form} className="formElements">
           <div className="nameElement">
             <label className="formLabel nameLabel">Name*</label>
             <input
@@ -28,6 +103,7 @@ const Contact = ({visibility}) => {
                 setInputValues((prev) => ({ ...prev, name: e.target.value }));
               }}
             />
+            <span className="errorMessage nameMessage" style={{color: "red", display: "none"}}>Please Enter your name*</span>
           </div>
 
           <div className="emailElement">
@@ -41,6 +117,7 @@ const Contact = ({visibility}) => {
                 setInputValues((prev) => ({ ...prev, email: e.target.value }));
               }}
             />
+            <span className="errorMessage emailMessage" style={{color: "red", display: "none"}}>Please Enter your valid email*</span>
           </div>
 
           <div className="messageElement">
@@ -56,14 +133,16 @@ const Contact = ({visibility}) => {
                 }));
               }}
             ></textarea>
+            <span className="errorMessage messageMessage" style={{color: "red", display: "none"}}>Please Enter message*</span>
           </div>
 
-          <span className="formButton">
+          <span className="formButton" onClick={sendMail}>
             <Button text="Send message" isFilled="true" />
           </span>
-        </div>
+        </form>
         <img src={CallMemoji} className="ContactMemoji" />
       </div>
+      <ToastContainer bodyClassName="toastBody" />
     </section>
   );
 };
