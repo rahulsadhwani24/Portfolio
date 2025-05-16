@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import Menu from "./Menu";
+import { useNavigate } from "react-router-dom";
 
 function Header({visibility, setVisibility}) {
   const [menuState, setMenuState] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
-      <Menu menuState={menuState} visibility={visibility} setVisibility={setVisibility}/>
+      <Menu menuState={menuState} setMenuState={setMenuState} visibility={visibility} setVisibility={setVisibility}/>
       <div className={`header ${visibility && 'noInteraction'}`}>
         <div className="logoContainer">
           <svg
             className="logo"
+            onClick={() => {
+              navigate('/Portfolio/')
+              setMenuState(false)}
+            }
             xmlns="http://www.w3.org/2000/svg"
             id="my-svg"
             viewBox="0 0 256 256"

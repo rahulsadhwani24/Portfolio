@@ -28,17 +28,6 @@
   background-color: var(--color-font);
 }
 
-.main {
-  background-color: var(--color-mode);
-  color: var(--color-font);
-  padding: 3rem clamp(2rem, 4vw, 3rem);
-  padding-top: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(4vh, 8vw, 4rem);
-}
-
 section {
   position: relative;
   z-index: 9;
@@ -48,6 +37,16 @@ section {
   section {
     margin-bottom: 10vw;
   }
+}
+
+a{
+  color: var(--color-font);
+  text-decoration: none;
+  padding-right: 2em;
+}
+
+a.active{
+  color: var(--color-primary);
 }
 
 .button {
@@ -82,6 +81,17 @@ section {
 .emptyButton:hover {
   background-color: var(--color-primary);
   color: var(--color-mode);
+}
+
+.main {
+  background-color: var(--color-mode);
+  color: var(--color-font);
+  padding: 3rem clamp(2rem, 4vw, 3rem);
+  padding-top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4vh, 8vw, 4rem);
 }
 
 /* .cursorFollower{
