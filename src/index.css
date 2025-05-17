@@ -290,6 +290,28 @@ a.active {
 
 /* ------------------------------- About Me ------------------------------ */
 
+.pageAbout{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: -10em;
+  margin-bottom: -2em;
+}
+
+.pageAbout .aboutContainer{
+  gap: 5em;
+}
+
+.pageAbout .descriptionAboutMe{
+  max-width: 60%;
+}
+
+.pageAbout .litenText{
+  top: 3%;
+  left: 13%;
+}
+
 .sectionAbout {
   background-color: var(--color-mode);
   position: fixed;
@@ -430,6 +452,26 @@ a.active {
 }
 
 @media only screen and (max-width: 500px) {
+
+  .pageAbout{
+    width: 92.3vw;
+    margin-left: 0;
+    margin-top: -2em;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pageAbout .descriptionAboutMe{
+    width: 92%;
+    max-width: none;
+  }
+
+  .pageAbout .litenText {
+    margin-left: -4%;
+    top: -2%;
+  }
+
   .sectionAbout {
     left: 0;
     width: 100vw;
@@ -440,10 +482,18 @@ a.active {
     overflow-y: scroll;
   }
 
+  .pageAbout .aboutContent{
+    overflow: hidden;
+  }
+
   .helloMemoji {
     position: absolute;
     height: 50vw;
     right: 5%;
+  }
+  
+  .pageAbout .socialIcons{
+    margin: 2em;
   }
 
   .aboutTitle {
@@ -928,21 +978,27 @@ a.active {
 
 /* ------------------------------- Contact ------------------------------ */
 
+.PageContact .sectionContact{
+  margin-top: -2em;
+  margin-bottom: -2em;
+}
+
 .sectionContact {
   width: 65vw;
   margin: auto;
   margin-top: 7vw;
+  margin-bottom: -2em;
 }
 
 .contactTitle {
-  font-size: clamp(1.3rem, 5vw, 2.7rem);
+  font-size: clamp(1.3rem, 5vw, 2.5rem);
   text-transform: uppercase;
   font-variation-settings: "wdth" 200, "wght" 600;
   cursor: default;
 }
 
 .contactText {
-  font-size: clamp(0.8rem, 3vw, 1.4rem);
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
   opacity: 0.6;
   font-weight: 400;
 }
@@ -959,9 +1015,10 @@ a.active {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin-top: 2vw;
+  margin-top: 2em;
 }
 
+.errorMessage,
 .formLabel {
   font-size: clamp(0.8rem, 2.5vw, 1.2rem);
 }
@@ -982,7 +1039,7 @@ a.active {
 
 .formButton {
   display: flex;
-  margin-top: 2vw;
+  margin-top: 3em;
 }
 
 .toastBody {
@@ -1009,6 +1066,11 @@ a.active {
 }
 
 @media only screen and (max-width: 700px) {
+  .PageContact .sectionContact{
+  margin-top: 0;
+  margin-bottom: -4em;
+  height: 80vh;
+}
   .sectionContact {
     width: 75vw;
     margin-left: 0;
@@ -1024,6 +1086,15 @@ a.active {
     display: none;
   }
 
+  .PageContact .ContactMemoji{
+    display: block;
+    position: absolute;
+    z-index: -1;
+    bottom: 10vw;
+    right: -20%;
+    opacity: .3;
+  }
+
   .formElements {
     width: 100%;
   }
@@ -1033,7 +1104,8 @@ a.active {
     min-width: 0;
   }
   .formButton {
-    margin-block: 10vw;
+    margin-top: 10vw;
+    margin-bottom: 1em;
   }
 }
 

@@ -41,9 +41,6 @@ function About({ setVisibility, visibility }) {
             <Link
               to={Resume}
               target="_blank"
-              onClick={() => {
-                setVisibility(!visibility);
-              }}
             >
               <Button text="Resume" isFilled="true" />
             </Link>

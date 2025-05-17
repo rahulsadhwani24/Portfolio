@@ -19,6 +19,11 @@ const Contact = ({ visibility }) => {
   }
 
   const sendMail = () => {
+    if(inputValues.name === "" && inputValues.email === "" && inputValues.message === ""){
+      document.querySelector('.nameMessage').style.display = "inline";
+      document.querySelector('.emailMessage').style.display = "inline";
+      document.querySelector('.messageMessage').style.display = "inline";
+    }
     if(inputValues.name === ""){
       document.querySelector('.nameMessage').style.display = "inline";
       return;
