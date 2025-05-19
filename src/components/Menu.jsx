@@ -20,7 +20,7 @@ function Menu({ menuState, setMenuState, visibility, setVisibility }) {
 
   const [navLinks, setNavLinks] = useState([
     "Home",
-    "Work",
+    "Works",
     "Experiments",
     "About",
     "Contact",

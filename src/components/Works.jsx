@@ -1,36 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import projects from '../assets/Projects'
 
 function Works({ visibility }) {
   const [projectShowCase, setProjectShowCase] = useState(false);
-
-  const [projects, setProject] = useState([
-    {
-      name: "Theme Park",
-      type: "Javascript",
-      link: "https://rahulsadhwani24.github.io/Themepark/",
-      logo: "../assets/Menu.gif",
-    },
-    {
-      name: "Marketing Arcc",
-      type: "Javascript",
-      link: "https://rahulsadhwani24.github.io/MarketingArc/",
-      logo: "../assets/search-context.gif",
-    },
-    {
-      name: "Max Medical",
-      type: "Javascript",
-      link: "https://rahulsadhwani24.github.io/MaxMedical/",
-      logo: "../assets/callMemoji.png",
-    },
-    {
-      name: "Two Good Co.",
-      type: "Javascript",
-      link: "https://rahulsadhwani24.github.io/TwoGoodCo/",
-      logo: "../assets/helloMemoji.png",
-    },
-  ]);
-
   return (
     <section className={`sectionWorks ${visibility && "noInteraction"}`}>
       <div className="worksContainer">

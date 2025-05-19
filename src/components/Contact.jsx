@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "./Button";
-import CallMemoji from "../../public/callMemoji.png";
+import CallMemoji from "../assets//callMemoji.png";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
 const Contact = ({ visibility }) => {

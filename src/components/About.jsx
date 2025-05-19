@@ -1,6 +1,6 @@
 import React from "react";
 import Cross from "../assets/cross.svg";
-import Hello from "../../public/helloMemoji.png";
+import Hello from "../assets/helloMemoji.png";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import Resume from "../assets/RAHUL SADHWANI RESUME.pdf";

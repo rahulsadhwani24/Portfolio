@@ -22,8 +22,8 @@ function Router() {
       <About setVisibility={setAboutVisibility} visibility={aboutVisibility} />
       <ReactLenis root>
         <Routes>
-        <Route path="/Portfolio/Home/" element={<Navigate to="/Portfolio/" replace />} />
           <Route path="/Portfolio/" element={<Home  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
+          <Route path="/Portfolio/Home" element={<Home  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
           <Route path="/Portfolio/work/" element={<PageWorks  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
           <Route path="/Portfolio/works/" element={<PageWorks  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
           <Route path="/Portfolio/experiments/" element={<PageExperiments  aboutVisibility={aboutVisibility} setAboutVisibility={setAboutVisibility} />} />
