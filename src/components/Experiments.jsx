@@ -1,41 +1,16 @@
 import React, { useState } from "react";
-import MenuGif from "../assets/Menu.gif";
-import SearchGif from "../assets/search-context.gif";
-import PreloaderSpinnerGif from "../assets/PreloaderSpinner.gif";
-import SkewTransitionGif from "../assets/SkewTransition.gif";
+import experiments from '../assets/Data/Experiments'
 import { Link } from "react-router-dom";
 
 const Experiments = ({ visibility }) => {
-  const [experimentsArray, setExperiments] = useState([
-    {
-      name: "Menu Open/Close Animation",
-      image: MenuGif,
-      link: "https://codepen.io/SRahul24/pen/WbbmaeP",
-    },
-    {
-      name: "Search Input Animation",
-      image: SearchGif,
-      link: "https://codepen.io/SRahul24/pen/MYYxPma",
-    },
-    {
-      name: "Skew Tranistion",
-      image: SkewTransitionGif,
-      link: "https://codepen.io/SRahul24/pen/azzMRpp",
-    },
-    {
-      name: "Preloader Spinner",
-      image: PreloaderSpinnerGif,
-      link: "https://codepen.io/SRahul24/pen/XJJGPOJ",
-    },
-  ]);
 
   return (
     <section className={`sectionExperiments ${visibility && "noInteraction"}`}>
       <h1 className="experimentsTitle">Experiments & Playground</h1>
       <h3 className="textCenter">Web is Fun.</h3>
       <div className="experimentsContainer">
-        {experimentsArray.map((experiment, index) => {
-          return (
+        {experiments.map((experiment, index) => {
+          return (index < 4 ) && (
             <Link to={experiment.link} key={index} className="experimentCard">
               <div>
                 <div className="experimentShowCaseContainer">

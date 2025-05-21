@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import projects from '../assets/Projects'
+import projects from '../assets/Data/Projects'
 
 function Works({ visibility }) {
   const [projectShowCase, setProjectShowCase] = useState(false);
