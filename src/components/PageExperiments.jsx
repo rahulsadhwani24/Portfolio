@@ -4,50 +4,67 @@ import Loader from "./Loader";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+
 gsap.registerPlugin(ScrollTrigger);
 
 function PageExperiments() {
   const [timeout, setTimeout] = useState(true);
   const experimentContainerRef = useRef(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
-    if (!timeout && experimentContainerRef.current) {
-      const experiments = gsap.utils.toArray(
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+  }, [experimentContainerRef.current]);
+
+  useEffect(() => {
+    if (!timeout && windowWidth > 850 && experimentContainerRef.current) {
+      const experimentsElements = gsap.utils.toArray(
         experimentContainerRef.current.querySelectorAll(".experiment")
       );
 
-      gsap.to(experiments, {
-        xPercent: -100 * (experiments.length - 1.7),
+      gsap.to(experimentsElements, {
+        xPercent: -100 * (experimentsElements.length - 1.7),
         scrollTrigger: {
           trigger: experimentContainerRef.current,
           pin: true,
           scrub: 2,
-          start: "50% 50%",
+          start: "45% 50%",
           end: () => "+=" + experimentContainerRef.current.offsetWidth,
         },
       });
-      return () => {
-        ScrollTrigger.getAll().forEach((trigger) => {
-          trigger.kill();
-        });
-      };
     }
   }, [timeout]);
+
   return (
     <main className={`${!timeout && "loadMain"}`}>
       {!timeout ? (
         <div className="pageExperiments">
           <h1 className="experimentsHeading">Experiments</h1>
-          <div className="experiments" ref={experimentContainerRef}>
-            {experiments.map((currExperiment, index) => {
-              return (
-                <Link className="experiment" key={index} to={currExperiment.link} target="_blank">
-                  <div>
-                    <img className="experimentImage" src={currExperiment.image} alt={currExperiment.name} />
-                    <span className="experimentName">{currExperiment.name}</span>
+          <div
+            className={`experiments ${
+              window.innerWidth <= 850 ? "vertical" : ""
+            }`}
+            ref={experimentContainerRef}
+          >
+            {experiments.map((currExperiment, index) => (
+              <Link
+                className="experiment"
+                key={index}
+                to={currExperiment.link}
+                target="_blank"
+              >
+                <div>
+                  <div className="experimentImage">
+                    <img src={currExperiment.image} alt={currExperiment.name} />
                   </div>
-                </Link>
-              );
-            })}
+                  <span className="experimentName">{currExperiment.name}</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       ) : (
