@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Arrow from "../assets/arrow.svg";
+import Arrow from "../assets/Arrow.svg";
 import { Link } from "react-router-dom";
 
 function Footer() {
