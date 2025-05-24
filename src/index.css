@@ -39,7 +39,7 @@ section {
 }
 
 main {
-  min-height: 57.5vh;
+  min-height: 60vh;
 }
 
 main.loadMain {
@@ -49,9 +49,6 @@ main.loadMain {
 @media only screen and (max-width: 650px) {
   section {
     margin-bottom: 12vw;
-  }
-  main {
-    min-height: auto;
   }
 }
 
@@ -811,6 +808,14 @@ a.active {
 
 /* ------------------------------- Works ------------------------------ */
 
+.pageWorks .projectShowCase{
+  margin-top: 5vw;
+}
+
+.pageWorks .worksContainer{
+  height: 100vh;
+}
+
 .title__showType {
   display: flex;
   align-items: flex-end;
@@ -865,7 +870,7 @@ a.active {
   min-height: 65vh;
   position: relative;
   height: 80vh;
-  width: 96vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -1026,11 +1031,11 @@ a.active {
     padding-top: 1em;
     max-height: 28rem;
   }
-  .experimentImage img{
+  .experimentImage img {
     max-width: 100%;
     object-fit: cover;
   }
-  .experiment:nth-child(5) img{
+  .experiment:nth-child(5) img {
     object-fit: contain;
   }
 }
@@ -1053,7 +1058,7 @@ a.active {
     object-fit: cover;
   }
 
-  .experiment:nth-child(5) .experimentImage img{
+  .experiment:nth-child(5) .experimentImage img {
     object-fit: contain;
   }
 
@@ -1100,9 +1105,19 @@ a.active {
 }
 
 .experimentsHeading {
-  font-size: clamp(1.2rem, 8vw, 8rem);
+  font-size: clamp(1.2rem, 8vw, 5rem);
+  max-width: 80%;
   text-transform: uppercase;
   font-variation-settings: "wdth" 200, "wght" 800;
+}
+
+.textRight{
+  display: block;
+  text-align: right;
+  font-size: clamp(1rem, 3vw, 1.7rem);
+  color: var(--color-primary);
+  padding-right: 2em;
+  margin-top: -2em;
 }
 
 .experimentsTitle {
@@ -1114,7 +1129,7 @@ a.active {
 
 .textCenter {
   text-align: center;
-  margin-top: 4em;
+  margin-top: 2em;
   font-size: clamp(1rem, 3vw, 1.7rem);
   color: var(--color-primary);
 }

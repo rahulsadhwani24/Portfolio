@@ -43,7 +43,7 @@ function PageExperiments() {
     <main className={`${!timeout && "loadMain"}`}>
       {!timeout ? (
         <div className="pageExperiments">
-          <h1 className="experimentsHeading">Experiments</h1>
+          <h1 className="experimentsHeading">Experiments & Playground</h1> <span className="textRight">Web is Fun.</span>
           <div
             className={`experiments ${
               window.innerWidth <= 850 ? "vertical" : ""
