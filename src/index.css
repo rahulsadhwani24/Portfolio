@@ -856,9 +856,8 @@ a.active {
 
 .worksContainer {
   display: flex;
-  min-height: 65vh;
+  min-height: 80vh;
   position: relative;
-  height: 80vh;
   width: 100%;
   overflow: hidden;
   margin-bottom: 2em;
@@ -875,15 +874,64 @@ a.active {
   min-width: 36vw;
 }
 
-.typeList {
+.pageWorks .worksContainer {
+  max-width: 100%;
+  margin-bottom: -5vw;
   margin-top: 5vw;
-  animation: fade-in 400ms ease-in;
 }
 
-@keyframes fade-in {
+.typeList {
+  animation: list-fade-in 400ms ease-in;
+}
+
+@keyframes list-fade-in {
   0% {
     opacity: 0;
     transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.typeGrid{
+  animation: grid-fade-in 600ms ease-in;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gridViewImage{
+  width: 45vw;
+  height: 60vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.gridViewImage img{
+  display: none;
+}
+
+.gridViewProjectContent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1em;
+}
+
+.gridViewProjectName{
+  font-size: clamp(1rem, 5vw, 2.8rem);
+  font-variation-settings: "wdth" 200, "wght" 600;
+  text-transform: uppercase;
+}
+
+@keyframes grid-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
   }
   100% {
     opacity: 1;
@@ -966,33 +1014,25 @@ a.active {
   transition: transform 300ms ease-in;
 }
 
-.pageWorks .projectShowCase {
-  margin-top: 5vw;
-}
-
-.pageWorks .worksContainer {
-  height: 100vh;
-  max-width: 100%;
-  margin-bottom: -5vw;
-}
-
 @media only screen and (max-width: 650px) {
-  .pageWorks .worksContainer {
-    height: max-content;
-    margin-top: 1em;
-    margin-bottom: 0;
-  }
   .sectionWorks {
     height: max-content;
     width: auto;
   }
+
   .worksContainer {
     height: max-content;
     min-height: max-content;
     width: 92vw;
     max-width: 100%;
   }
-
+  
+  .pageWorks .worksContainer {
+    height: max-content;
+    margin-bottom: 0;
+    margin-top: 1em;
+  }
+  
   .title,
   .project {
     width: 85vw;
@@ -1005,6 +1045,30 @@ a.active {
   .projectShowCase {
     display: none;
   }
+
+  .typeGrid{
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2rem;
+}
+
+.gridViewImage{
+  width: 100%;
+  height: auto;
+}
+
+.gridViewImage img{
+  display: block;
+  max-width: 100%;
+}
+
+.gridViewProjectContent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1em;
+}
+
 }
 
 /* ------------------------------- Experiments ------------------------------ */

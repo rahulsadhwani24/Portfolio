@@ -88,7 +88,21 @@ function PageWorks() {
                 })}
               </div>
             ) : (
-              <div className="typeGrid"></div>
+              <div className="typeGrid">
+                {projects.map((project, index) => {
+                  return (
+                    <Link to={project.link} target="_blank" key={index} className="projectInGridView">
+                      <div className="gridViewImage" style={{backgroundImage: `url(${project.logo})`}}>
+                        <img src={project.logo}/>
+                      </div>
+                      <div className="gridViewProjectContent">
+                        <span className="gridViewProjectName">{project.name}</span>
+                        <span className="gridViewProjectType">{project.type}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
             )}
           </div>
         </div>
