@@ -389,15 +389,9 @@ a.active {
 
 .pageAbout {
   position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-top: -10em;
-  margin-bottom: -2em;
-}
-
-.pageAbout .aboutContainer {
-  gap: 5em;
+  max-width: 100%;
+  margin-top: -8em;
+  margin-bottom: -10vw;
 }
 
 .pageAbout .descriptionAboutMe {
@@ -550,13 +544,13 @@ a.active {
 
 @media only screen and (max-width: 500px) {
   .pageAbout {
-    width: 92.3vw;
-    margin-left: 0;
     margin-top: -2em;
     overflow: hidden;
-    flex-direction: column;
-    align-items: flex-start;
   }
+  /* 
+  .pageAbout .aboutContainer{
+    background-color: #0c0c0c;
+  } */
 
   .pageAbout .descriptionAboutMe {
     width: 92%;
@@ -586,6 +580,11 @@ a.active {
     position: absolute;
     height: 50vw;
     right: 5%;
+    opacity: 0.4;
+  }
+
+  .pageAbout .helloMemoji {
+    right: 0;
   }
 
   .pageAbout .socialIcons {
@@ -807,15 +806,6 @@ a.active {
 }
 
 /* ------------------------------- Works ------------------------------ */
-
-.pageWorks .projectShowCase{
-  margin-top: 5vw;
-}
-
-.pageWorks .worksContainer{
-  height: 100vh;
-}
-
 .title__showType {
   display: flex;
   align-items: flex-end;
@@ -861,7 +851,6 @@ a.active {
 }
 
 .sectionWorks {
-  width: 95.6vw;
   overflow: hidden;
 }
 
@@ -872,6 +861,7 @@ a.active {
   height: 80vh;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 2em;
 }
 
 .title,
@@ -976,17 +966,31 @@ a.active {
   transition: transform 300ms ease-in;
 }
 
+.pageWorks .projectShowCase {
+  margin-top: 5vw;
+}
+
+.pageWorks .worksContainer {
+  height: 100vh;
+  max-width: 100%;
+  margin-bottom: -5vw;
+}
+
 @media only screen and (max-width: 650px) {
+  .pageWorks .worksContainer {
+    height: max-content;
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
   .sectionWorks {
     height: max-content;
     width: auto;
   }
-
   .worksContainer {
     height: max-content;
     min-height: max-content;
     width: 92vw;
-    max-width: 100vw;
+    max-width: 100%;
   }
 
   .title,
@@ -1016,66 +1020,7 @@ a.active {
 
 .experiments.vertical {
   flex-direction: column;
-  /* align-items: stretch; */
-  /* height: auto; */
   overflow: visible;
-}
-
-@media only screen and (max-width: 850px) {
-  .experiments {
-    max-width: 35rem;
-    align-items: flex-start;
-  }
-  .experiment {
-    height: 65vw;
-    padding-top: 1em;
-    max-height: 28rem;
-  }
-  .experimentImage img {
-    max-width: 100%;
-    object-fit: cover;
-  }
-  .experiment:nth-child(5) img {
-    object-fit: contain;
-  }
-}
-
-@media only screen and (min-width: 850px) {
-  .experiments {
-    height: 80vh;
-    gap: 5em;
-  }
-  .experiment {
-    min-width: 45rem;
-    min-height: 40rem;
-  }
-  .experimentImage {
-    min-height: 24rem;
-  }
-  .experimentImage img {
-    min-height: 24rem;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  .experiment:nth-child(5) .experimentImage img {
-    object-fit: contain;
-  }
-
-  .experiment > div {
-    padding-bottom: 5em;
-  }
-
-  .experimentName {
-    position: absolute;
-    bottom: 10%;
-    transform: translateY(300%);
-    transition: transform 200ms ease-in;
-  }
-
-  .experiment:hover .experimentName {
-    transform: translateY(0);
-  }
 }
 
 .experiment {
@@ -1105,13 +1050,13 @@ a.active {
 }
 
 .experimentsHeading {
-  font-size: clamp(1.2rem, 8vw, 5rem);
+  font-size: clamp(1rem, 6.5vw, 5rem);
   max-width: 80%;
   text-transform: uppercase;
   font-variation-settings: "wdth" 200, "wght" 800;
 }
 
-.textRight{
+.textRight {
   display: block;
   text-align: right;
   font-size: clamp(1rem, 3vw, 1.7rem);
@@ -1129,7 +1074,7 @@ a.active {
 
 .textCenter {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 3em;
   font-size: clamp(1rem, 3vw, 1.7rem);
   color: var(--color-primary);
 }
@@ -1240,7 +1185,79 @@ a.active {
   fill: var(--color-font);
 }
 
+@media only screen and (min-width: 850px) {
+  .experiments {
+    height: 80vh;
+    gap: 5em;
+  }
+  .experiment {
+    min-width: 45rem;
+    min-height: 40rem;
+  }
+  .experimentImage {
+    min-height: 24rem;
+  }
+  .experimentImage img {
+    min-height: 24rem;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .experiment:nth-child(5) .experimentImage img {
+    object-fit: contain;
+  }
+
+  .experiment > div {
+    padding-bottom: 5em;
+  }
+
+  .experimentName {
+    position: absolute;
+    bottom: 10%;
+    transform: translateY(300%);
+    transition: transform 200ms ease-in;
+  }
+
+  .experiment:hover .experimentName {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .experiments {
+    max-width: 35rem;
+    align-items: flex-start;
+  }
+  .experiment {
+    height: 65vw;
+    padding-top: 1em;
+    max-height: 28rem;
+  }
+  .experimentName {
+    padding-bottom: 2em;
+    padding-top: 1em;
+  }
+  .experimentImage img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .experiment:nth-child(5) img {
+    object-fit: contain;
+  }
+  .experimentsHeading {
+    max-width: 100%;
+  }
+  .textRight {
+    text-align: left;
+    padding: 1em 0 0;
+    margin: 0;
+  }
+}
+
 @media only screen and (max-width: 650px) {
+  .sectionExperiments {
+    margin-top: 3em;
+  }
   .experimentsContainer {
     flex-wrap: wrap;
   }
